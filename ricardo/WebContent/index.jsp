@@ -58,9 +58,8 @@
 				</li>
 			</ul>
 		</nav>
-	
-	
-		<table class="table table-hover">
+		
+		<table id="l_id" class="table table-hover">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -69,8 +68,7 @@
 					<th>User Name</th>
 				</tr>
 			</thead>
-		</table>
-		
+		</table>		
 	</div>
 
 
