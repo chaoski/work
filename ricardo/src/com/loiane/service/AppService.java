@@ -86,15 +86,15 @@ public class AppService {
 			
 			List<Integer> deleteApps = util.getListIdFromJSON1(data);
 			
-			for (Integer id : deleteApps){
-				appDAO.deleteApp(id);
+			for (Integer a_id : deleteApps){
+				appDAO.deleteApp(a_id);
 			}
 			
 		} else { //it is only one object - cast to object/bean
 			
-			Integer id = Integer.parseInt(data.toString());
+			Integer a_id = Integer.parseInt(data.toString());
 			
-			appDAO.deleteApp(id);
+			appDAO.deleteApp(a_id);
 		}
 	}
 	

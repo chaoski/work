@@ -62,3 +62,16 @@
 		url(/extjs-crud-grid-spring-hibernate/ext-3.2.1/examples/shared/icons/save.gif)
 		!important;
 }
+
+.icon-add {
+		background-image:
+		url(/extjs-crud-grid-spring-hibernate/ext-3.2.1/examples/shared/icons/fam/add.gif)
+}
+.icon-delete {
+		background-image:
+		url(/extjs-crud-grid-spring-hibernate/ext-3.2.1/examples/shared/icons/fam/delete.gif)
+}
+.icon-save {
+		background-image:
+		url(/extjs-crud-grid-spring-hibernate/ext-3.2.1/examples/shared/icons/add.gif)
+}

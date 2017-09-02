@@ -55,7 +55,7 @@ public class AppController  {
 		}
 	}
 	
-	@RequestMapping(value="/contact/update.action")
+	@RequestMapping(value="/app/update.action")
 	public @ResponseBody Map<String,? extends Object> update(@RequestParam Object data) throws Exception {
 		try{
 

@@ -2,36 +2,36 @@ Ext.onReady(function(){
 
 	Ext.BLANK_IMAGE_URL = '/extjs-crud-grid/ext-3.2.1/resources/images/default/s.gif';
 	
-    var Contact = Ext.data.Record.create([
-	{name: 'id'},
+    var App = Ext.data.Record.create([
+	{name: 'a_id'},
     {
-        name: 'name',
+        name: 'a_name',
         type: 'string'
     }, {
-        name: 'phone',
+        name: 'a_desc',
         type: 'string'
     }, {
-        name: 'email',
+        name: 'a_stat',
         type: 'string'
     }]);
     
     var proxy = new Ext.data.HttpProxy({
         api: {
-            read : 'contact/view.action',
-            create : 'contact/create.action',
-            update: 'contact/update.action',
-            destroy: 'contact/delete.action'
+            read : 'app/view.action',
+            create : 'app/create.action',
+            update: 'app/update.action',
+            destroy: 'app/delete.action'
         }
     });
     
     var reader = new Ext.data.JsonReader({
         totalProperty: 'total',
         successProperty: 'success',
-        idProperty: 'id',
+        idProperty: 'a_id',
         root: 'data',
         messageProperty: 'message'  // <-- New "messageProperty" meta-data
     }, 
-    Contact);
+    App);
 
  // The new DataWriter component.
     var writer = new Ext.data.JsonWriter({
@@ -73,23 +73,23 @@ Ext.onReady(function(){
             {header: "NAME",
              width: 170,
              sortable: true,
-             dataIndex: 'name',
+             dataIndex: 'a_name',
              editor: {
                 xtype: 'textfield',
                 allowBlank: false
             }},
-            {header: "PHONE #",
+            {header: "Description",
              width: 160,
              sortable: true,
-             dataIndex: 'phone',
+             dataIndex: 'a_desc',
              editor: {
                  xtype: 'textfield',
                  allowBlank: false
             }},
-            {header: "EMAIL",
+            {header: "Status",
              width: 170,
              sortable: true,
-             dataIndex: 'email',
+             dataIndex: 'a_stat',
              editor: {
                 xtype: 'textfield',
                 allowBlank: false
@@ -97,18 +97,18 @@ Ext.onReady(function(){
         ],
         viewConfig:{forcefit:true},
         plugins: [editor],
-        title: 'My Contacts',
+        title: 'My Apps',
         height: 300,
         width:535,
 		frame:true,
 		tbar: [{
             iconCls: 'icon-user-add',
-            text: 'Add Contact',
+            text: 'Add App',
             handler: function(){
-                var e = new Contact({
-                    name: 'New Guy',
-                    phone: '(000) 000-0000',
-                    email: 'new@loianetest.com'
+                var e = new App({
+                    name: 'New App',
+                    description: 'This app is for',
+                    status: 'able/disable'
                 });
                 editor.stopEditing();
                 store.insert(0, e);
@@ -118,7 +118,7 @@ Ext.onReady(function(){
             }
         },{
             iconCls: 'icon-user-delete',
-            text: 'Remove Contact',
+            text: 'Remove App',
             handler: function(){
                 editor.stopEditing();
                 var s = grid.getSelectionModel().getSelections();
@@ -136,5 +136,5 @@ Ext.onReady(function(){
     });
 
     //render to DIV
-    grid.render('crud-grid');
+    grid.render('crud-grid2');
 });
