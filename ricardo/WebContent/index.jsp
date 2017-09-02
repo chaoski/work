@@ -66,7 +66,7 @@
 					<th>ID</th>
 					<th>App</th>
 					<th>Error</th>
-					<th>Name</th>
+					<th>User Name</th>
 				</tr>
 			</thead>
 		</table>
